@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garanta sua vaga | GPS da Cor</title>
+  <meta name="description" content="Cadastre seus dados para garantir sua vaga na proxima turma do GPS da Cor.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#171414',
+            cocoa: '#3b2a25',
+            rose: '#d9897d',
+            blush: '#f7dad4',
+            gold: '#c69c45',
+            linen: '#fff8f3'
+          },
+          boxShadow: {
+            soft: '0 18px 60px rgba(59, 42, 37, 0.14)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-linen text-ink antialiased">
+  <header class="border-b border-cocoa/10 bg-white/85 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8">
+      <a href="index.html" class="text-xl font-black tracking-wide text-cocoa">GPS da Cor</a>
+      <a href="index.html" class="text-sm font-bold text-cocoa/70 transition hover:text-rose">Voltar ao site</a>
+    </nav>
+  </header>
+
+  <main class="relative overflow-hidden">
+    <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-blush/60 blur-3xl"></div>
+    <section class="relative mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-12 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-18">
+      <div>
+        <p class="font-black uppercase tracking-[0.22em] text-gold">Cadastro da turma</p>
+        <h1 class="mt-4 text-4xl font-black leading-tight text-cocoa md:text-6xl">Garanta sua vaga na proxima turma do GPS da Cor.</h1>
+        <p class="mt-6 max-w-2xl text-xl leading-9 text-cocoa/70">Preencha seus dados abaixo para receber as informacoes da turma e descobrir como aprimorar seus servicos ganhando mais.</p>
+
+        <form id="leadForm" class="mt-9 max-w-2xl space-y-5" novalidate>
+          <div>
+            <label class="sr-only" for="nome">Nome completo</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required placeholder="Seu Nome completo" class="h-16 w-full border border-cocoa/15 bg-white px-6 text-lg text-cocoa outline-none transition placeholder:text-cocoa/45 focus:border-gold focus:ring-4 focus:ring-gold/15">
+          </div>
+          <div>
+            <label class="sr-only" for="whatsapp">Telefone WhatsApp</label>
+            <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required placeholder="Seu Telefone (WhatsApp)" class="h-16 w-full border border-cocoa/15 bg-white px-6 text-lg text-cocoa outline-none transition placeholder:text-cocoa/45 focus:border-gold focus:ring-4 focus:ring-gold/15">
+          </div>
+          <div>
+            <label class="sr-only" for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="Seu Melhor E-mail" class="h-16 w-full border border-cocoa/15 bg-white px-6 text-lg text-cocoa outline-none transition placeholder:text-cocoa/45 focus:border-gold focus:ring-4 focus:ring-gold/15">
+          </div>
+          <button id="submitButton" type="submit" class="flex h-16 w-full items-center justify-center bg-gold px-8 text-center text-base font-black uppercase tracking-[0.16em] text-white shadow-soft transition hover:bg-cocoa disabled:cursor-not-allowed disabled:opacity-70">
+            Garantir minha vaga
+          </button>
+          <p id="formMessage" class="hidden text-base font-semibold"></p>
+        </form>
+
+        <div id="successBox" class="mt-8 hidden max-w-2xl rounded-lg border border-gold/25 bg-white p-7 shadow-soft">
+          <p class="font-black uppercase tracking-[0.2em] text-gold">Cadastro concluido!</p>
+          <h2 class="mt-3 text-3xl font-black text-cocoa">Obrigado por se inscrever, so falta um passo.</h2>
+          <p class="mt-4 text-lg leading-8 text-cocoa/70">Para receber todas as informacoes sobre o GPS da Cor e dicas exclusivas, entre agora no nosso grupo de WhatsApp.</p>
+          <a id="groupButton" href="" class="mt-6 inline-flex h-14 w-full items-center justify-center bg-[#05b341] px-6 text-center font-black uppercase tracking-[0.14em] text-white shadow-soft transition hover:bg-[#049936] sm:w-auto sm:min-w-[360px]">
+            Entrar no grupo de WhatsApp
+          </a>
+          <p id="groupMessage" class="mt-3 text-sm text-cocoa/55">Link do grupo ainda nao configurado.</p>
+        </div>
+      </div>
+
+      <aside class="relative">
+        <div class="absolute -left-6 -top-6 h-28 w-28 border-l-4 border-t-4 border-gold/70"></div>
+        <div class="overflow-hidden rounded-lg bg-white shadow-soft">
+          <img src="assets/artista-gps-da-cor.png" alt="Artista e mentora do GPS da Cor" class="h-[620px] w-full object-cover object-top">
+        </div>
+        <div class="absolute -bottom-5 left-6 right-6 rounded-lg bg-cocoa p-5 text-white shadow-soft">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-blush">GPS da Cor</p>
+          <p class="mt-1 text-lg font-black">Colorimetria com metodo para cabeleireiras que querem evoluir.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const WEBHOOK_URL = 'https://webhook.agentepilot.com/webhook/receber-mensagem';
+    const WHATSAPP_GROUP_URL = '';
+
+    const form = document.getElementById('leadForm');
+    const submitButton = document.getElementById('submitButton');
+    const formMessage = document.getElementById('formMessage');
+    const successBox = document.getElementById('successBox');
+    const groupButton = document.getElementById('groupButton');
+    const groupMessage = document.getElementById('groupMessage');
+
+    if (WHATSAPP_GROUP_URL) {
+      groupButton.href = WHATSAPP_GROUP_URL;
+      groupButton.target = '_blank';
+      groupButton.rel = 'noopener noreferrer';
+      groupMessage.classList.add('hidden');
+    } else {
+      groupButton.setAttribute('aria-disabled', 'true');
+      groupButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        groupMessage.textContent = 'O link do grupo sera adicionado em breve.';
+      });
+    }
+
+    function setMessage(text, type) {
+      formMessage.textContent = text;
+      formMessage.className = type === 'error'
+        ? 'text-base font-semibold text-rose'
+        : 'text-base font-semibold text-cocoa/70';
+    }
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(form);
+      const payload = {
+        nome: formData.get('nome').trim(),
+        whatsapp: formData.get('whatsapp').trim(),
+        email: formData.get('email').trim(),
+        origem: 'GPS da Cor - pagina de vendas',
+        pagina: window.location.href,
+        enviadoEm: new Date().toISOString()
+      };
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Enviando...';
+      setMessage('Enviando seus dados com seguranca...', 'info');
+
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=UTF-8'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        form.reset();
+        form.classList.add('hidden');
+        formMessage.classList.add('hidden');
+        successBox.classList.remove('hidden');
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (error) {
+        setMessage('Nao foi possivel enviar agora. Tente novamente em alguns instantes.', 'error');
+        submitButton.disabled = false;
+        submitButton.textContent = 'Garantir minha vaga';
+      }
+    });
+  </script>
+</body>
+</html>
