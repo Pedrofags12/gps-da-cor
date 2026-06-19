@@ -140,12 +140,12 @@
       setMessage('Enviando seus dados com seguranca...', 'info');
 
       try {
+        const body = new URLSearchParams(payload);
+
         await fetch(WEBHOOK_URL, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'text/plain;charset=UTF-8'
-          },
-          body: JSON.stringify(payload)
+          mode: 'no-cors',
+          body
         });
 
         form.reset();
