@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPS da Cor | Curso de Colorimetria para Cabeleireiras</title>
+  <meta name="description" content="Aprenda colorimetria capilar na pratica, conquiste seguranca para diagnosticar fios e entregue loiros, morenas iluminadas e correcoes com mais previsibilidade.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#171414',
+            cocoa: '#3b2a25',
+            rose: '#d9897d',
+            blush: '#f7dad4',
+            gold: '#c69c45',
+            linen: '#fff8f3'
+          },
+          boxShadow: {
+            soft: '0 18px 60px rgba(59, 42, 37, 0.14)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-linen text-ink antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-cocoa/10 bg-linen/92 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" x-data="{ open: false }">
+      <a href="index.html" class="text-xl font-black tracking-wide text-cocoa">GPS da Cor</a>
+      <div class="hidden items-center gap-7 text-sm font-semibold text-cocoa md:flex">
+        <a href="#metodo" class="hover:text-rose">Metodo</a>
+        <a href="#conteudo" class="hover:text-rose">Conteudo</a>
+        <a href="#resultados" class="hover:text-rose">Resultados</a>
+        <a href="#faq" class="hover:text-rose">FAQ</a>
+      </div>
+      <a href="https://wa.me/5511999999999?text=Ola%2C%20quero%20saber%20mais%20sobre%20o%20GPS%20da%20Cor" class="hidden rounded-full bg-cocoa px-5 py-2.5 text-sm font-bold text-white transition hover:bg-rose md:inline-flex">Falar no WhatsApp</a>
+      <button class="text-2xl text-cocoa md:hidden" aria-label="Abrir menu" @click="open = !open">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="absolute left-5 right-5 top-16 rounded-lg border border-cocoa/10 bg-white p-4 shadow-soft md:hidden" x-show="open" x-transition>
+        <a href="#metodo" class="block rounded px-3 py-2 font-semibold text-cocoa hover:bg-blush">Metodo</a>
+        <a href="#conteudo" class="block rounded px-3 py-2 font-semibold text-cocoa hover:bg-blush">Conteudo</a>
+        <a href="#resultados" class="block rounded px-3 py-2 font-semibold text-cocoa hover:bg-blush">Resultados</a>
+        <a href="#faq" class="block rounded px-3 py-2 font-semibold text-cocoa hover:bg-blush">FAQ</a>
+        <a href="https://wa.me/5511999999999?text=Ola%2C%20quero%20saber%20mais%20sobre%20o%20GPS%20da%20Cor" class="mt-2 block rounded bg-cocoa px-3 py-2 text-center font-bold text-white">Falar no WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative min-h-screen overflow-hidden pt-24">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1800&q=85" alt="Cabeleireira finalizando cabelo loiro em sala de beleza" class="absolute inset-0 h-full w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/88 via-cocoa/70 to-cocoa/20"></div>
+      <div class="relative mx-auto flex min-h-[calc(100vh-96px)] max-w-7xl items-center px-5 py-16 lg:px-8">
+        <div class="max-w-3xl text-white">
+          <p class="mb-5 inline-flex rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm font-bold backdrop-blur">Colorimetria capilar com direcao, pratica e seguranca</p>
+          <h1 class="text-4xl font-black leading-tight md:text-6xl">Domine o GPS da Cor e pare de depender de formulas prontas.</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-white/88 md:text-xl">Um curso para cabeleireiras que querem diagnosticar melhor, neutralizar reflexos indesejados e entregar resultados de cor mais previsiveis no salao.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="https://wa.me/5511999999999?text=Ola%2C%20quero%20me%20inscrever%20no%20GPS%20da%20Cor" class="rounded-full bg-rose px-8 py-4 text-center text-base font-black text-white shadow-soft transition hover:bg-gold">Quero entrar na proxima turma</a>
+            <a href="#conteudo" class="rounded-full border border-white/35 px-8 py-4 text-center text-base font-bold text-white transition hover:bg-white hover:text-cocoa">Ver conteudo do curso</a>
+          </div>
+          <p class="mt-5 text-sm text-white/75">Vagas limitadas para acompanhamento mais proximo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="bg-white py-20">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <div>
+          <p class="font-bold uppercase tracking-[0.18em] text-rose">O metodo</p>
+          <h2 class="mt-3 text-3xl font-black text-cocoa md:text-5xl">Um caminho claro para decidir a cor certa em cada cliente.</h2>
+          <p class="mt-6 text-lg leading-8 text-cocoa/75">O GPS da Cor organiza diagnostico, fundo de clareamento, estrela de Oswald, neutralizacao e escolha de oxidante em uma rotina simples para usar antes de cada atendimento.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg border border-cocoa/10 bg-linen p-6">
+            <i class="fa-solid fa-magnifying-glass-chart text-3xl text-rose"></i>
+            <h3 class="mt-5 text-xl font-black text-cocoa">Diagnostico</h3>
+            <p class="mt-3 text-cocoa/70">Aprenda a ler altura de tom, historico quimico e limite real do fio antes de formular.</p>
+          </div>
+          <div class="rounded-lg border border-cocoa/10 bg-linen p-6">
+            <i class="fa-solid fa-palette text-3xl text-rose"></i>
+            <h3 class="mt-5 text-xl font-black text-cocoa">Formula</h3>
+            <p class="mt-3 text-cocoa/70">Entenda o por que das misturas e escolha nuances com intencao, nao por tentativa.</p>
+          </div>
+          <div class="rounded-lg border border-cocoa/10 bg-linen p-6">
+            <i class="fa-solid fa-flask-vial text-3xl text-rose"></i>
+            <h3 class="mt-5 text-xl font-black text-cocoa">Correcao</h3>
+            <p class="mt-3 text-cocoa/70">Neutralize laranja, amarelo e manchas com mais previsibilidade e menos retrabalho.</p>
+          </div>
+          <div class="rounded-lg border border-cocoa/10 bg-linen p-6">
+            <i class="fa-solid fa-scissors text-3xl text-rose"></i>
+            <h3 class="mt-5 text-xl font-black text-cocoa">Pratica</h3>
+            <p class="mt-3 text-cocoa/70">Aulas aplicadas para voce levar o raciocinio direto para a cadeira do salao.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conteudo" class="bg-linen py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="font-bold uppercase tracking-[0.18em] text-rose">Conteudo</p>
+          <h2 class="mt-3 text-3xl font-black text-cocoa md:text-5xl">O que voce vai aprender</h2>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <div class="rounded-lg bg-white p-7 shadow-soft">
+            <span class="text-sm font-black text-gold">Modulo 01</span>
+            <h3 class="mt-3 text-xl font-black text-cocoa">Base da colorimetria</h3>
+            <p class="mt-3 text-cocoa/70">Altura de tom, reflexos, fundo de clareamento e leitura correta da cartela.</p>
+          </div>
+          <div class="rounded-lg bg-white p-7 shadow-soft">
+            <span class="text-sm font-black text-gold">Modulo 02</span>
+            <h3 class="mt-3 text-xl font-black text-cocoa">Formulacao inteligente</h3>
+            <p class="mt-3 text-cocoa/70">Como montar formulas para loiros, ruivos, castanhos iluminados e tonalizacoes.</p>
+          </div>
+          <div class="rounded-lg bg-white p-7 shadow-soft">
+            <span class="text-sm font-black text-gold">Modulo 03</span>
+            <h3 class="mt-3 text-xl font-black text-cocoa">Correcoes e manutencao</h3>
+            <p class="mt-3 text-cocoa/70">Como corrigir reflexos, manchas e desbotamentos sem comprometer a saude do fio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" class="bg-cocoa py-20 text-white">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
+        <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1200&q=85" alt="Profissional aplicando coloracao em cabelo no salao" class="h-[520px] w-full rounded-lg object-cover shadow-soft">
+        <div>
+          <p class="font-bold uppercase tracking-[0.18em] text-blush">Para quem e</p>
+          <h2 class="mt-3 text-3xl font-black md:text-5xl">Para cabeleireiras que querem cobrar melhor pelo proprio conhecimento.</h2>
+          <ul class="mt-8 space-y-4 text-white/86">
+            <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-rose"></i><span>Voce ja atende coloracao, mas ainda sente inseguranca na hora de formular.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-rose"></i><span>Voce quer reduzir retrabalho, manchas e resultados diferentes do combinado.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-rose"></i><span>Voce deseja se posicionar como especialista em cor e aumentar o ticket do salao.</span></li>
+          </ul>
+          <a href="https://wa.me/5511999999999?text=Ola%2C%20quero%20receber%20as%20informacoes%20do%20GPS%20da%20Cor" class="mt-9 inline-flex rounded-full bg-white px-8 py-4 font-black text-cocoa transition hover:bg-blush">Receber informacoes da turma</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <h2 class="text-center text-3xl font-black text-cocoa md:text-5xl">Resultados que o salao percebe</h2>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <div class="rounded-lg border border-cocoa/10 p-7">
+            <p class="text-4xl font-black text-rose">+ clareza</p>
+            <p class="mt-3 text-cocoa/70">Na avaliacao do fio e na conversa com a cliente antes do procedimento.</p>
+          </div>
+          <div class="rounded-lg border border-cocoa/10 p-7">
+            <p class="text-4xl font-black text-rose">- retrabalho</p>
+            <p class="mt-3 text-cocoa/70">Com formulas pensadas para o fundo real de clareamento e objetivo da cor.</p>
+          </div>
+          <div class="rounded-lg border border-cocoa/10 p-7">
+            <p class="text-4xl font-black text-rose">+ valor</p>
+            <p class="mt-3 text-cocoa/70">Para comunicar tecnica, seguranca e atendimento profissional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-linen py-20">
+      <div class="mx-auto grid max-w-7xl gap-6 px-5 md:grid-cols-3 lg:px-8">
+        <blockquote class="rounded-lg bg-white p-7 shadow-soft">
+          <p class="text-cocoa/80">"Eu fazia loiro no automatico. Agora consigo explicar cada etapa para a cliente e isso mudou minha seguranca."</p>
+          <footer class="mt-5 font-black text-cocoa">Mariana Alves</footer>
+        </blockquote>
+        <blockquote class="rounded-lg bg-white p-7 shadow-soft">
+          <p class="text-cocoa/80">"O modulo de neutralizacao foi o que mais virou chave. Parei de ter medo do laranja."</p>
+          <footer class="mt-5 font-black text-cocoa">Camila Rocha</footer>
+        </blockquote>
+        <blockquote class="rounded-lg bg-white p-7 shadow-soft">
+          <p class="text-cocoa/80">"Consegui organizar meu atendimento e cobrar melhor porque passei a mostrar tecnica."</p>
+          <footer class="mt-5 font-black text-cocoa">Renata Martins</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="faq" class="bg-white py-20">
+      <div class="mx-auto max-w-3xl px-5 lg:px-8">
+        <h2 class="text-center text-3xl font-black text-cocoa md:text-5xl">Perguntas frequentes</h2>
+        <div class="mt-10 space-y-4" x-data="{ selected: 1 }">
+          <div class="rounded-lg border border-cocoa/10 p-5">
+            <button class="flex w-full items-center justify-between gap-4 text-left font-black text-cocoa" @click="selected = selected === 1 ? null : 1">Preciso ser cabeleireira profissional?<i class="fa-solid fa-chevron-down text-rose"></i></button>
+            <p class="mt-4 text-cocoa/70" x-show="selected === 1">O curso e indicado para quem ja atua ou esta em formacao e quer entender colorimetria com mais profundidade.</p>
+          </div>
+          <div class="rounded-lg border border-cocoa/10 p-5">
+            <button class="flex w-full items-center justify-between gap-4 text-left font-black text-cocoa" @click="selected = selected === 2 ? null : 2">As aulas sao online?<i class="fa-solid fa-chevron-down text-rose"></i></button>
+            <p class="mt-4 text-cocoa/70" x-show="selected === 2">Sim. Ajuste aqui caso sua turma seja presencial, hibrida ou tenha encontros ao vivo.</p>
+          </div>
+          <div class="rounded-lg border border-cocoa/10 p-5">
+            <button class="flex w-full items-center justify-between gap-4 text-left font-black text-cocoa" @click="selected = selected === 3 ? null : 3">Terei certificado?<i class="fa-solid fa-chevron-down text-rose"></i></button>
+            <p class="mt-4 text-cocoa/70" x-show="selected === 3">Voce pode oferecer certificado de conclusao. Confirme aqui a regra final da sua turma.</p>
+          </div>
+          <div class="rounded-lg border border-cocoa/10 p-5">
+            <button class="flex w-full items-center justify-between gap-4 text-left font-black text-cocoa" @click="selected = selected === 4 ? null : 4">Como faco minha inscricao?<i class="fa-solid fa-chevron-down text-rose"></i></button>
+            <p class="mt-4 text-cocoa/70" x-show="selected === 4">Clique no botao de WhatsApp para falar com a equipe ou substitua o link pelo checkout oficial.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-rose py-20 text-white">
+      <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1800&q=85" alt="Bancada profissional de salao com produtos de cabelo" class="absolute inset-0 h-full w-full object-cover opacity-20">
+      <div class="relative mx-auto max-w-4xl px-5 text-center lg:px-8">
+        <h2 class="text-3xl font-black md:text-5xl">Entre para a proxima turma do GPS da Cor.</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-lg text-white/88">Receba detalhes sobre data de inicio, investimento, bonus e condicoes de inscricao.</p>
+        <a href="https://wa.me/5511999999999?text=Ola%2C%20quero%20entrar%20na%20proxima%20turma%20do%20GPS%20da%20Cor" class="mt-8 inline-flex rounded-full bg-white px-8 py-4 font-black text-cocoa transition hover:bg-blush">Quero minha vaga</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-ink py-12 text-white">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 md:grid-cols-4 lg:px-8">
+      <div>
+        <h3 class="text-xl font-black">GPS da Cor</h3>
+        <p class="mt-3 text-white/65">Curso de colorimetria capilar para cabeleireiras.</p>
+      </div>
+      <div>
+        <h4 class="font-black">Contato</h4>
+        <a href="mailto:contato@gpsdacor.com.br" class="mt-3 block text-white/65 hover:text-white">contato@gpsdacor.com.br</a>
+        <a href="https://wa.me/5511999999999" class="mt-2 block text-white/65 hover:text-white">WhatsApp</a>
+      </div>
+      <div>
+        <h4 class="font-black">Navegacao</h4>
+        <a href="#metodo" class="mt-3 block text-white/65 hover:text-white">Metodo</a>
+        <a href="#conteudo" class="mt-2 block text-white/65 hover:text-white">Conteudo</a>
+        <a href="blog.html" class="mt-2 block text-white/65 hover:text-white">Blog</a>
+      </div>
+      <div>
+        <h4 class="font-black">Legal</h4>
+        <a href="privacy.html" class="mt-3 block text-white/65 hover:text-white">Politica de Privacidade</a>
+        <a href="terms.html" class="mt-2 block text-white/65 hover:text-white">Termos de Uso</a>
+      </div>
+    </div>
+    <p class="mx-auto mt-10 max-w-7xl px-5 text-sm text-white/45 lg:px-8">&copy; 2026 GPS da Cor. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
