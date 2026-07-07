@@ -16,6 +16,7 @@
             ink: '#171414',
             cocoa: '#3b2a25',
             rose: '#d9897d',
+            roseDark: '#b96b61',
             blush: '#f7dad4',
             gold: '#c69c45',
             linen: '#fff8f3'
@@ -57,7 +58,7 @@
             <label class="sr-only" for="email">E-mail</label>
             <input id="email" name="email" type="email" autocomplete="email" required placeholder="Seu Melhor E-mail" class="h-16 w-full border border-cocoa/15 bg-white px-6 text-lg text-cocoa outline-none transition placeholder:text-cocoa/45 focus:border-gold focus:ring-4 focus:ring-gold/15">
           </div>
-          <button id="submitButton" type="submit" class="flex h-16 w-full items-center justify-center bg-gold px-8 text-center text-base font-black uppercase tracking-[0.16em] text-white shadow-soft transition hover:bg-cocoa disabled:cursor-not-allowed disabled:opacity-70">
+          <button id="submitButton" type="submit" class="flex h-16 w-full items-center justify-center bg-rose px-8 text-center text-base font-black uppercase tracking-[0.16em] text-white shadow-soft transition hover:bg-roseDark disabled:cursor-not-allowed disabled:opacity-70">
             Garantir minha vaga
           </button>
           <p id="formMessage" class="hidden text-base font-semibold"></p>
@@ -67,7 +68,7 @@
           <p class="font-black uppercase tracking-[0.2em] text-gold">Cadastro concluído!</p>
           <h2 class="mt-3 text-3xl font-black text-cocoa">Obrigado por se inscrever, só falta um passo.</h2>
           <p class="mt-4 text-lg leading-8 text-cocoa/70">Para receber todas as informações sobre o GPS da Cor e dicas exclusivas, entre agora no nosso grupo de WhatsApp.</p>
-          <a id="groupButton" href="" class="mt-6 inline-flex h-14 w-full items-center justify-center bg-[#05b341] px-6 text-center font-black uppercase tracking-[0.14em] text-white shadow-soft transition hover:bg-[#049936] sm:w-auto sm:min-w-[360px]">
+          <a id="groupButton" href="" class="mt-6 inline-flex h-14 w-full items-center justify-center bg-rose px-6 text-center font-black uppercase tracking-[0.14em] text-white shadow-soft transition hover:bg-roseDark sm:w-auto sm:min-w-[360px]">
             Entrar no grupo de WhatsApp
           </a>
           <p id="groupMessage" class="mt-3 text-sm text-cocoa/55">Link do grupo ainda não configurado.</p>
@@ -89,7 +90,7 @@
 
   <script>
     const WEBHOOK_URL = 'https://webhook.agentepilot.com/webhook/receber-mensagem';
-    const WHATSAPP_GROUP_URL = '';
+    const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/HFRYIQF3Rpx9DD4tGFtPiU';
 
     const form = document.getElementById('leadForm');
     const submitButton = document.getElementById('submitButton');
@@ -126,6 +127,7 @@
         return;
       }
 
+      const groupWindow = WHATSAPP_GROUP_URL ? window.open('about:blank', '_blank') : null;
       const formData = new FormData(form);
       const payload = {
         nome: formData.get('nome').trim(),
@@ -154,7 +156,18 @@
         formMessage.classList.add('hidden');
         successBox.classList.remove('hidden');
         successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        if (WHATSAPP_GROUP_URL) {
+          if (groupWindow && !groupWindow.closed) {
+            groupWindow.location.href = WHATSAPP_GROUP_URL;
+          } else {
+            window.open(WHATSAPP_GROUP_URL, '_blank', 'noopener,noreferrer');
+          }
+        }
       } catch (error) {
+        if (groupWindow && !groupWindow.closed) {
+          groupWindow.close();
+        }
         setMessage('Não foi possível enviar agora. Tente novamente em alguns instantes.', 'error');
         submitButton.disabled = false;
         submitButton.textContent = 'Garantir minha vaga';
