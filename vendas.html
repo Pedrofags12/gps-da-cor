@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garanta sua vaga | GPS da Cor</title>
-  <meta name="description" content="Cadastre seus dados para garantir sua vaga na proxima turma do GPS da Cor.">
+  <meta name="description" content="Cadastre seus dados para receber as informacoes da proxima turma do curso de colorimetria GPS da Cor.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -39,9 +39,9 @@
     <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-blush/60 blur-3xl"></div>
     <section class="relative mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-12 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-18">
       <div>
-        <p class="font-black uppercase tracking-[0.22em] text-gold">Cadastro da turma</p>
+        <p class="font-black uppercase tracking-[0.22em] text-gold">Curso de colorimetria</p>
         <h1 class="mt-4 text-4xl font-black leading-tight text-cocoa md:text-6xl">Garanta sua vaga na proxima turma do GPS da Cor.</h1>
-        <p class="mt-6 max-w-2xl text-xl leading-9 text-cocoa/70">Preencha seus dados abaixo para receber as informacoes da turma e descobrir como aprimorar seus servicos ganhando mais.</p>
+        <p class="mt-6 max-w-2xl text-xl leading-9 text-cocoa/70">Preencha seus dados para receber as informacoes do curso e aprender colorimetria de um jeito mais claro, pratico e conectado com a realidade do salao.</p>
 
         <form id="leadForm" class="mt-9 max-w-2xl space-y-5" novalidate>
           <div>
@@ -80,7 +80,7 @@
         </div>
         <div class="absolute -bottom-5 left-6 right-6 rounded-lg bg-cocoa p-5 text-white shadow-soft">
           <p class="text-sm font-bold uppercase tracking-[0.18em] text-blush">GPS da Cor</p>
-          <p class="mt-1 text-lg font-black">Colorimetria com metodo para cabeleireiras que querem evoluir.</p>
+          <p class="mt-1 text-lg font-black">Um curso para transformar teoria em decisao tecnica na cadeira do salao.</p>
         </div>
       </aside>
     </section>
@@ -130,7 +130,7 @@
         nome: formData.get('nome').trim(),
         whatsapp: formData.get('whatsapp').trim(),
         email: formData.get('email').trim(),
-        origem: 'GPS da Cor - pagina de vendas',
+        origem: 'GPS da Cor - curso de colorimetria',
         pagina: window.location.href,
         enviadoEm: new Date().toISOString()
       };
