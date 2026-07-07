@@ -4,12 +4,12 @@ Site estático para divulgar o curso de colorimetria capilar GPS da Cor.
 
 ## Arquivos principais
 
-- `index.html`: landing page principal.
-- `vendas.html`: página de cadastro para a próxima turma.
-- `blog.html`: listagem de artigos.
-- `blog/the-future-of-business-how-ai-agents-are-revolutio.html`: artigo do blog, mantido com o nome antigo para preservar o caminho.
-- `privacy.html`: Política de Privacidade.
-- `terms.html`: Termos de Uso.
+- `landing-page/index.html`: landing page principal, publicada em `/landing-page/`.
+- `cadastro/index.html`: página de cadastro para a próxima turma, publicada em `/cadastro/`.
+- `blog/index.html`: listagem de artigos, publicada em `/blog/`.
+- `blog/artigo/index.html`: artigo do blog, publicado em `/blog/artigo/`.
+- `privacy/index.html`: Política de Privacidade, publicada em `/privacy/`.
+- `terms/index.html`: Termos de Uso, publicada em `/terms/`.
 - `netlify.toml`: configuração simples para publicação na Netlify.
 
 ## Pontos para personalizar antes de publicar
@@ -17,7 +17,7 @@ Site estático para divulgar o curso de colorimetria capilar GPS da Cor.
 1. Trocar todos os links `https://wa.me/5511999999999` pelo WhatsApp oficial.
 2. Trocar `contato@gpsdacor.com.br` pelo e-mail oficial.
 3. Ajustar se a turma é online, presencial ou híbrida na FAQ.
-4. Em `vendas.html`, preencher `WHATSAPP_GROUP_URL` quando o link do grupo estiver pronto.
+4. Em `cadastro/index.html`, ajustar `WHATSAPP_GROUP_URL` se o link do grupo mudar.
 5. Confirmar se o webhook `https://webhook.agentepilot.com/webhook/receber-mensagem` está ativo no n8n.
 6. Revisar política de reembolso, certificado e prazo de acesso nos termos.
 

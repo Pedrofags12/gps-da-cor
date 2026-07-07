@@ -1,6 +1,42 @@
 [build]
   publish = "."
 
+[[redirects]]
+  from = "/"
+  to = "/landing-page/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/index.html"
+  to = "/landing-page/"
+  status = 301
+
+[[redirects]]
+  from = "/vendas.html"
+  to = "/cadastro/"
+  status = 301
+
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-future-of-business-how-ai-agents-are-revolutio.html"
+  to = "/blog/artigo/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy/"
+  status = 301
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/terms/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
