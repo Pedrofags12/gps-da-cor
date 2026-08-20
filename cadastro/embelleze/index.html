@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garanta sua vaga | GPS da Cor + Embelleze</title>
+  <meta name="description" content="Cadastre seus dados para receber as informações da próxima turma do curso de colorimetria GPS da Cor em parceria com a Embelleze.">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#171414',
+            cocoa: '#3b2a25',
+            rose: '#d9897d',
+            roseDark: '#b96b61',
+            blush: '#f7dad4',
+            gold: '#c69c45',
+            linen: '#fff8f3'
+          },
+          boxShadow: {
+            soft: '0 18px 60px rgba(59, 42, 37, 0.14)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-linen text-ink antialiased">
+  <header class="border-b border-cocoa/10 bg-white/85 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8">
+      <a href="/landing-page/" class="text-xl font-black tracking-wide text-cocoa">GPS da Cor</a>
+      <a href="/landing-page/" class="text-sm font-bold text-cocoa/70 transition hover:text-rose">Voltar ao site</a>
+    </nav>
+  </header>
+
+  <main class="relative overflow-hidden">
+    <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-blush/60 blur-3xl"></div>
+    <section class="relative mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-12 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-18">
+      <div>
+        <p class="font-black uppercase tracking-[0.22em] text-gold">Curso de colorimetria. Em parceria com Embelleze</p>
+        <h1 class="mt-4 text-4xl font-black leading-tight text-cocoa md:text-6xl">Garanta sua vaga na próxima turma do GPS da Cor.</h1>
+        <p class="mt-6 max-w-2xl text-xl leading-9 text-cocoa/70">Preencha seus dados para receber as informações do curso e aprender colorimetria de um jeito mais claro, prático e conectado com a realidade do salão.</p>
+
+        <form id="leadForm" class="mt-9 max-w-2xl space-y-5" novalidate>
+          <div>
+            <label class="sr-only" for="nome">Nome completo</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required placeholder="Seu Nome completo" class="h-16 w-full border border-cocoa/15 bg-white px-6 text-lg text-cocoa outline-none transition placeholder:text-cocoa/45 focus:border-gold focus:ring-4 focus:ring-gold/15">
+          </div>
+          <div>
+            <label class="sr-only" for="whatsapp">Telefone WhatsApp</label>
+            <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required placeholder="Seu Telefone (WhatsApp)" class="h-16 w-full border border-cocoa/15 bg-white px-6 text-lg text-cocoa outline-none transition placeholder:text-cocoa/45 focus:border-gold focus:ring-4 focus:ring-gold/15">
+          </div>
+          <div>
+            <label class="sr-only" for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="Seu Melhor E-mail" class="h-16 w-full border border-cocoa/15 bg-white px-6 text-lg text-cocoa outline-none transition placeholder:text-cocoa/45 focus:border-gold focus:ring-4 focus:ring-gold/15">
+          </div>
+          <button id="submitButton" type="submit" class="flex h-16 w-full items-center justify-center bg-rose px-8 text-center text-base font-black uppercase tracking-[0.16em] text-white shadow-soft transition hover:bg-roseDark disabled:cursor-not-allowed disabled:opacity-70">
+            Garantir minha vaga
+          </button>
+        </form>
+      </div>
+
+      <aside class="relative">
+        <div class="absolute -left-6 -top-6 h-28 w-28 border-l-4 border-t-4 border-gold/70"></div>
+        <div class="overflow-hidden rounded-lg bg-white shadow-soft">
+          <img src="/assets/artista-gps-da-cor.png" alt="Artista e mentora do GPS da Cor" class="h-[620px] w-full object-cover object-top">
+        </div>
+        <div class="absolute -bottom-5 left-6 right-6 rounded-lg bg-cocoa p-5 text-white shadow-soft">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-blush">GPS da Cor</p>
+          <p class="mt-1 text-lg font-black">Um curso para transformar teoria em decisão técnica na cadeira do salão.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/Hw39jbWbXGD4eZPae8otyS?s=hd&p=i&mlu=4';
+
+    const form = document.getElementById('leadForm');
+    const submitButton = document.getElementById('submitButton');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Abrindo WhatsApp...';
+      window.location.assign(WHATSAPP_GROUP_URL);
+    });
+  </script>
+</body>
+</html>
